@@ -13,6 +13,9 @@
 # Ignore css
 *.css
 
+# Ignore Tasks
+*.TODO
+
 #Ignore database
 database.yml
 db/structure.sql
