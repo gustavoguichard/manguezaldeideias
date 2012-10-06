@@ -13,8 +13,8 @@ Feature:
   
   @javascript
   Scenario: When 2 ideas were found
-    Given there is an idea called "My idea lol" that belongs to "Mobilidade Urbana"
-    And there is an idea called "Idea from other" that belongs to "Mobilidade Urbana"
+    Given there is an idea called "My idea lol" that belongs to "TISA"
+    And there is an idea called "Idea from other" that belongs to "TISA"
     And I am in "the ideas navigation page"
     When I fill the idea search form with "idea"
     Then I should be in "the ideas navigation by keyword page"

@@ -22,11 +22,6 @@
       = f.label :title, t('idea.new.give_a_name')
       = f.text_field :title, :maxlength => 70, :class => 'required'
       .error = @idea.errors[:title].join(", ")
-    p
-      = f.label :minimum_investment, t("idea.value.title")
-      = f.text_field :minimum_investment, :maxlength => 16, class: 'currency'
-      em = t('idea.new.minimum_investment_desc')
-      .error = @idea.errors[:minimum_investment].join(", ")
     .categories.required
       h4 = t('idea.new.choose_a_category')
       - if !@categories.nil? && @categories.size > 0

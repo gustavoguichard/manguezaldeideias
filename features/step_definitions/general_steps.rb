@@ -10,7 +10,7 @@ end
 Given /^there is an idea called "([^"]*)" by "([^"]*)"$/ do |arg1, arg2|
   user = User.find_by_name(arg2)
   user = User.make!(name: arg2) unless user
-  idea = Idea.make!(title: arg1, category: IdeaCategory.find_by_name("Mobilidade Urbana"), user: Service.make!(user: user).user)
+  idea = Idea.make!(title: arg1, category: IdeaCategory.find_by_name("TISA"), user: Service.make!(user: user).user)
 end
 
 When /^I visit the "([^"]*)" idea page$/ do |arg1|
@@ -116,7 +116,6 @@ When /^I fill the form$/ do
   within ".new_idea" do
     fill_in "Sabe de um título melhor? Colabore aqui:", with: "My collab"
     fill_in "Algo a adicionar? Aqui é o corpo da ideia, colabore alterando e/ou adicionando seus pontos:", with: "My collab desc"
-    fill_in "idea_minimum_investment", with: "500000"
   end
 end
 
@@ -160,7 +159,7 @@ Then /^I should see the latest video$/ do
 end
 
 Then /^I should see the default video$/ do
-  page.find("iframe")[:src].should == "http://www.youtube.com/embed/d-laubHNtrI"
+  page.find("iframe")[:src].should == "http://www.youtube.com/embed/NugRZGDbPFU"
 end
 
 ############## Banners steps
