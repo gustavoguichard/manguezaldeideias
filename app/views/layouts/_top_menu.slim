@@ -1,0 +1,18 @@
+nav
+  ul.actions
+    - path = request.path
+    li class=(path.include?(timeline_index_path) ? 'selected' : '')
+      = link_to timeline_index_path do
+        | Atividade recente
+    li class=(path =~ /^\/(o-que-e-o-manguezal-de-ideias)/ ? 'selected' : '')
+      = link_to "O que é o Manguezal de Ideias", "/o-que-e-o-manguezal-de-ideias"
+    li class=(path =~ /^\/(tema)/ ? 'selected' : '')
+      = link_to "Tema", "/tema"
+    li#more_info_links class=(if path =~ /^\/(objetivo-e-resultado)/ or path=~ /^\/(regulamento)/ then 'selected' else '' end)
+      = link_to "Objetivo e Resultado", "/objetivo-e-resultado", id: "more_info"
+      ul.submenu
+        li.submenu-item
+          = link_to "Regulamento", "/regulamento"
+
+    li class=(path =~ /^\/(contato)/ ? 'selected' : '')
+      = link_to "Contato", "/contato"

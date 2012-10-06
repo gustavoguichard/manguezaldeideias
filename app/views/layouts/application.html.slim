@@ -3,14 +3,14 @@ html
   head
     - @title = yield(:title)
     title == "#{(@title.empty? ? 'Uma plataforma para unir ideias' : @title)} · Festival de Ideias 2012"
-    = render :partial => "layouts/meta_tags_defaults"
-    = favicon_link_tag "favicon.gif", :type => "image/gif"
+    = render partial: "layouts/meta_tags_defaults"
+    = favicon_link_tag "favicon.gif", type: "image/gif"
     = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Droid+Serif|Gloria+Hallelujah", :application
     = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
     = csrf_meta_tags
 
     = yield :javascripts
-    = render :partial => "shared/google_analytics"
+    = render partial: "shared/google_analytics"
 
   - name = controller.controller_name
   - action = controller.action_name
@@ -24,65 +24,45 @@ html
       #modal_alert
         = flash[:modal_alert]
 
-    //= render :partial => "layouts/login"
+    //= render partial: "layouts/login"
     header.main
       .wrapper
         ul.user_actions[data-url=(update_notification_user_url(current_user) if current_user)]
-          = render :partial => "layouts/user_actions"
+          = render partial: "layouts/user_actions"
         .logo
-          = link_to (image_tag "logotipo.png", :alt => "Festival de Ideais", :title => "Festival de Ideias"), root_url
-        nav
-          ul.actions
-            - path = request.path
-            li class=(path.include?(timeline_index_path) ? 'selected' : '')
-              = link_to timeline_index_path do
-                | Atividade recente
-            li class=(path.include?(scope_root_path) ? 'selected' : '')
-              = link_to scope_root_path do
-                | Navegue nas ideias
-            li class=(path.include?(new_idea_path) ? 'selected' : '')
-              = new_idea_button
-
-            li#more_info_links
-              a href="" id="more_info"
-                | Saiba mais
-              ul.submenu
-                - @pages_for_links.each do |page|
-                  li.submenu-item
-                    = link_to page.title, page
-                li.submenu-item
-                  a href="http://blog.festivaldeideias.org.br" target="blank_"
-                    | Blog
+          = link_to (image_tag "logotipo.png", alt: "Festival de Ideais", title: "Festival de Ideias"), root_url
+        
+        = render partial: "layouts/top_menu"
 
         //
         /*- if current_page?(root_url) or current_page?(scope_featured_url)*/
         - if current_page?(root_url)
-          = render :partial => "layouts/header"
+          = render partial: "layouts/header"
 
       .clear
 
     .wrapper
       #main
         aside
-          = render :partial => "layouts/sidebar"
+          = render partial: "layouts/sidebar"
         #idea
           - if current_page?(root_url)
-            = render :partial => "layouts/news_board"
+            = render partial: "layouts/news_board"
 
           = yield
         .clear
 
       - if current_page?(root_url) or request.url.match(/navegue-nas-ideias/)
-        = render :partial => "layouts/statistics"
+        = render partial: "layouts/statistics"
 
-    = render :partial => "layouts/footer"
+    = render partial: "layouts/footer"
 
-    #ramify.hidden= render :partial => "ideas/new_ramify"
+    #ramify.hidden= render partial: "ideas/new_ramify"
   .hidden
     a href="http://flow.mixpanel.com/f/partner"
       img src="http://mixpanel.com/site_media/images/partner/badge_blue.png" alt="Mobile and Web Analytics"
 
 
   = javascript_include_tag :application
-  = render :partial => "layouts/plugin_defaults"
+  = render partial: "layouts/plugin_defaults"
   = yield :bottomscripts 
