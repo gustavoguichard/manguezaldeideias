@@ -44,8 +44,6 @@ describe Idea do
           :description_html => @idea.description_html,
           :likes => @idea.likes,
           :colaborations => @idea.colaborations.count,
-          :minimum_investment => @idea.minimum_investment,
-          :formatted_minimum_investment => @idea.formatted_minimum_investment,
           :url => @idea.as_json[:url]
         }
         @idea.as_json.should == idea_json
@@ -130,24 +128,6 @@ describe Idea do
     its(:parent_id) { should be_nil }
     its(:accepted) { should be_nil }
     its(:original_parent_id) { should == @idea.id }
-  end
-
-
-  describe "#check_minimum_investment" do
-    it "Should format minimum investment as currency" do 
-      @idea = Idea.make! minimum_investment: "5000.25"
-      @idea.formatted_minimum_investment.should  == "R$ 5.000,25"
-    end
-
-    it "Should format minimum investiment corretly when receiving currency symbols" do
-      @idea = Idea.make! minimum_investment: "5100.00" 
-      @idea.formatted_minimum_investment.should  == "R$ 5.100,00"
-    end
-
-    it "Should format minimum investiment corretly when receiving wrong format" do
-      @idea = Idea.make! minimum_investment: "5101.25" 
-      @idea.formatted_minimum_investment.should  == "R$ 5.101,25"
-    end
   end
 
   describe "#set_facebook_url" do

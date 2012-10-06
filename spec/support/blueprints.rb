@@ -27,8 +27,7 @@ Idea.blueprint do
   title       { "Title #{sn}" }
   headline    { "Headline #{sn}" }
   description { "Description #{sn}" }
-  category { IdeaCategory.make! } 
-  minimum_investment { "R$ 5.000,00" }
+  category { IdeaCategory.make! }
   user { Service.make!.user }
   parent_id { nil }
   accepted { nil }
