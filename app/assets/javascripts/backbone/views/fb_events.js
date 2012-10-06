@@ -43,33 +43,11 @@ App.FbEvents = App.BaseView.extend({
     var view, token, query, now;
     view = this;
     now = parseInt((new Date()).getTime() / 1000);
-    //token = window.accessToken;
-
-
-    //query = "SELECT eid, name, start_time, location FROM event WHERE eid IN (SELECT eid FROM event_member WHERE uid=211024602327337) AND start_time > " + now + " ORDER BY start_time ASC LIMIT 10";
 
     FB.getLoginStatus(function (result) {
       var now = String(parseInt(new Date() / 1000));
 
       if (result.status === "connected") {
-        //FB.api({
-          //method: 'fql.query',
-          //query: query,
-          //access_token: token
-        //}, function (response) {
-          //console.log(response);
-          //view.populateEventField(response);
-        //});
-       
-        //// Api antiga
-        //FB.api({
-          //method: 'events.get',
-          //uid: 211024602327337 // <- Id do grupo
-        //}, function (response) {
-          //console.log(response);
-          //view.populateEventField(response);
-        //});
-
         //Usando a Graph API do Facebook 
         $.get("https://graph.facebook.com/219514234760244/events", {
           'since': now,

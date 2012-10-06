@@ -8,7 +8,6 @@ App.Ideas.NewIdea = App.BaseView.extend({
             ,"selectCategory"
             ,"updateStore"
             ,"openIdeaForm"
-            //,"updateCharactersLeft"
             ,"focusOnDescription"
             ,"clearAll"
             ,"setRedirectUrl"
@@ -33,8 +32,6 @@ App.Ideas.NewIdea = App.BaseView.extend({
         "keyup .popup #idea_headline": "updateLinkColors",
         "keyup .popup #idea_title": "updateLinkColors",
         "click .popup .categories li": "updateLinkColors",
-        //"keydown .popup #idea_headline": "updateCharactersLeft",
-        //"keyup .popup #idea_headline": "updateCharactersLeft",
         "click .popup #refine blockquote": "focusOnDescription",
         "submit .popup form.new_idea": "checkForm",
         "click .popup img.close_image": "clearAll",

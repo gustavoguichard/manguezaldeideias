@@ -31,8 +31,6 @@ var App = window.App = {
             });
             // Starting Facebox and modal alerts
             App.Common.startFacebox();
-            App.applyMaskMoney();
-            App.loadMaskOnFaceboxReveal();
             // Sempre executar
             App.Ideas.newIdea = new App.Ideas.NewIdea();
             App.fbEvents = new App.FbEvents();
@@ -135,22 +133,6 @@ var App = window.App = {
             }
 
         }),
-    },
-
-    applyMaskMoney: function(){
-      $('.currency').maskMoney({
-        showSymbol: true,
-        symbol:"R$",
-        decimal:".", 
-        thousands:"", 
-        precision: 2
-      }); 
-    },
-
-    loadMaskOnFaceboxReveal: function(){
-      $(document).bind('afterReveal.facebox', function(){
-        App.applyMaskMoney();
-      });
     }
 };
 

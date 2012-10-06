@@ -11,7 +11,6 @@
   
 - elsif path =~ /^\/(navegue-nas-ideias)/
   = render "layouts/filters"
-  = render "layouts/share_festival"
 
 - elsif path =~/^\/(ideias).*(\/cocreate)$/ 
 
@@ -21,23 +20,15 @@
 - elsif path =~ /^\/(sessions)/
   
 - elsif path =~ /^\/(ideias)/
-  = render "layouts/idea_value"
   = render "layouts/collaborators"
-  = render "layouts/share"
   = render "layouts/events"
 
 - elsif path =~ /(collaboration)/
-  = render "layouts/idea_value"
   = render "layouts/collaborators"
-  = render "layouts/share"
   = render "layouts/events"
 
 - else
   = render "layouts/internal_menu"
-  /*= new_idea_button('button')*/
   = render "layouts/events"
   = render "layouts/community"
-  // = render "layouts/blog_feeds"
-  // = render "layouts/twitter_feeds"
-
 
