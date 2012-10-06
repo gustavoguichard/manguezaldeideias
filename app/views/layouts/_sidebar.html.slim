@@ -6,18 +6,11 @@
 
 - if path == root_path
   = render "layouts/filters"
-  /*= new_idea_button('button')*/
   = render "layouts/community"
   = render "layouts/events"
-  = render "layouts/share_festival"
-  .clear
-  = render "layouts/social"
-  // = render "layouts/blog_feeds"
-  // = render "layouts/twitter_feeds"
-
+  
 - elsif path =~ /^\/(navegue-nas-ideias)/
   = render "layouts/filters"
-  /*= new_idea_button('button')*/
   = render "layouts/share_festival"
 
 - elsif path =~/^\/(ideias).*(\/cocreate)$/ 
@@ -28,7 +21,6 @@
 - elsif path =~ /^\/(sessions)/
   
 - elsif path =~ /^\/(ideias)/
-  // SIDEBAR FOR IDEA PAGE
   = render "layouts/idea_value"
   = render "layouts/collaborators"
   = render "layouts/share"
