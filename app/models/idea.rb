@@ -32,7 +32,7 @@ class Idea < ActiveRecord::Base
   has_many :messages
   has_many :ramifications, class_name: "Idea", foreign_key: :original_parent_id, dependent: :restrict
 
-  validates_presence_of :title, :description, :category_id, :user_id, :minimum_investment
+  validates_presence_of :title, :description, :category_id, :user_id
 
   # Scope for colaborations
 
@@ -65,7 +65,7 @@ class Idea < ActiveRecord::Base
   after_create :set_facebook_url
   #after_create :set_tokbox_settings
 
-  attr_accessible :user_id, :parent_id, :title, :headline, :description, :featured, :recommend, :likes, :position, :category_id, :accepted, :minimum_investment, :facebook_url, :tokbox_session, :original_parent_id, :comment_count
+  attr_accessible :user_id, :parent_id, :title, :headline, :description, :featured, :recommend, :likes, :position, :category_id, :accepted, :facebook_url, :tokbox_session, :original_parent_id, :comment_count
 
   def cocreation_channel
     "cocreation-#{self.id}"
@@ -102,8 +102,6 @@ class Idea < ActiveRecord::Base
       :description_html => description_html,
       :likes => likes,
       :colaborations => colaborations.count,
-      :minimum_investment => minimum_investment,
-      :formatted_minimum_investment => formatted_minimum_investment,
       :url => category_idea_path(category, self)
     }
   end
@@ -120,14 +118,6 @@ class Idea < ActiveRecord::Base
   # Convert the description text
   def description_html
     convert_html description
-  end
-
-  def formatted_minimum_investment
-    ActionController::Base.helpers.number_to_currency(self.minimum_investment)
-  end
-
-  def check_minimum_investment
-    self.minimum_investment = minimum_investment_before_type_cast.tr('R$.', '')
   end
 
   def convert_html(text)
