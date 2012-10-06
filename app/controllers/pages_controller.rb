@@ -1,8 +1,6 @@
 #class PagesController < IdeasController
 class PagesController < ApplicationController
-  #before_filter :validate_user, :except => :show
-  #authenticate_admin_user! :except => :show
-
+  
   inherit_resources
   actions :show
 

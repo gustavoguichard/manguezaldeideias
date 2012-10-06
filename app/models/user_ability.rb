@@ -2,7 +2,6 @@ class UserAbility
   include CanCan::Ability
 
   def initialize(user)
-
     can :read, :all
     can :cocreate, Idea
     can :create, Idea
