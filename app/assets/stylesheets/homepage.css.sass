@@ -6,11 +6,11 @@ body[data-action="Index"][data-controller-name="Ideas"]
     margin: 20px 0 0 0
     padding: 10px 0
     height: 300px
-    background:
-      image: url(asset_path("banner.png", "image"))
-      repeat: no-repeat
     overflow: hidden
     clear: both
+    position: relative
+    background: rgba(white, .8)
+    +border-radius(4px)
 
     .button.start
       float: left
@@ -24,7 +24,15 @@ body[data-action="Index"][data-controller-name="Ideas"]
       +grid(6)
 
     section.text_intro
-      display: none
+      color: #333
+      position: absolute
+      width: 36%
+      left: 25px
+      top: 40px
+      font-size: 2.8em
+      line-height: 1.1em
+      text-transform: uppercase
+
     section.video_intro
       float: right
       iframe
