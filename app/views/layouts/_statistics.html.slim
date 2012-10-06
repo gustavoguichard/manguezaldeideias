@@ -5,15 +5,7 @@ section#statistics
       h3 ideias populares
     - @ideas_popular.each_with_index do |idea, index|
       - unless index > 5
-        li= link_to idea.title, category_idea_path(idea.category, idea)
-
-  ul.more_info
-    li
-      h3 informações úteis
-    - @pages_for_links.each do |page|
-      li
-        = link_to page.title, page
-      
+        li= link_to idea.title, category_idea_path(idea.category, idea)      
 
 
   ul.totals

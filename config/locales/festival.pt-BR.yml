@@ -117,8 +117,7 @@ pt-BR:
     events:
       title: "Eventos"
       subtitle: "Reúna-se fora da internet!"
-      group: "Participe do Grupo"
-      event: "Crie e participe de eventos"
+      group: "Grupo do Facebook"
     
     # Community
     community:
