@@ -18,7 +18,8 @@ class SessionsController < ApplicationController
     self.current_user = @auth.user
     
     flash[:notice] = t('login.success')
-    redirect_to redirect_url || root_path
+    future_path = self.current_user ? redirect_url || root_path : new_session_path
+    redirect_to future_path
   end
 
   def destroy
