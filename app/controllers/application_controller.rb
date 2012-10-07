@@ -9,6 +9,11 @@ class ApplicationController < ActionController::Base
     redirect_to new_session_path, :alert => exception.message
   end
 
+  # I couldn't get CanCan to work in this controller
+  def redirect_guest
+    redirect_to new_session_path if !is_signed_in?
+  end
+  
   protected
   def current_user
     @current_user ||= User.find_by_id(cookies[:user], :include => :ideas)

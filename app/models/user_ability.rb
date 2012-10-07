@@ -14,5 +14,6 @@ class UserAbility
     can :update_notification, User
     can :manage, User, :id => user.id
 
+    can :read, TimelineController
   end
 end

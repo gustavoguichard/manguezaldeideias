@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   inherit_resources
   actions :show
 
-  before_filter :load_resources
+  before_filter :load_resources, :redirect_guest
 
   def sort
     ids = params[:page].map(&:to_i)
