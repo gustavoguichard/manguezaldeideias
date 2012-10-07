@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
 
   # I couldn't get CanCan to work in this controller
   def redirect_guest
+    flash[:notice] = t('login.waiting')
     redirect_to new_session_path if !is_signed_in? or (current_user and !current_user.approved)
   end
   

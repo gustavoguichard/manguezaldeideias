@@ -32,16 +32,17 @@ pt-BR:
           creator: "<a href='%{collaborator_path}' class='user'>%{collaborator}</a> ramificou a sua idea <a href='%{idea_path}' class='idea'>%{idea}</a>."
           collaborators: "<a href='%{collaborator_path}' class='user'>%{collaborator}</a> ramificou a idea <a href='%{idea_path}' class='idea'>%{idea}</a> de <a href='%{user_path}' class='user'>%{user}</a>, com a qual você colaborou."
   site:
-    title: 'Festival de Ideias 2012 - Uma plataforma para unir ideias'
-    description: 'O Festival de Ideias é uma rede de colaboração e troca de informações entre empreendedores, investidores e o público em geral.'
-    url: "http://festivaldeideias.org.br"
-    keywords: 'colaboracao, festival, ideias, empreendedores, inovacao'
-    fb_title: 'Festival de Ideias 2012'
+    title: 'Manguezal de Ideias - Uma plataforma para unir ideias'
+    description: 'O Manguezal de Ideias é uma rede de colaboração e troca de informações entre empreendedores, investidores e o público em geral.'
+    url: "http://manguezaldeideias.org.br"
+    keywords: 'colaboracao, manguezal, ideias, empreendedores, inovacao'
+    fb_title: 'Manguezal de Ideias'
     fb_description: 'Formulado para fomentar soluções criativas frente aos problemas atuais da sociedade e para promover a inovação e o empreendedorismo, o FdI é uma rede de colaboração e troca de informações entre empreendedores, investidores e o público em geral.'
     fb_image: "http://i.imgur.com/jrx4k.png"
   login:
     success: "Bem vindo! Por favor, aguarde que seu cadastro seja aprovado para poder usar a plataforma."
     create_account: "Crie uma conta"
+    waiting: "Por favor, seja paciente, seu cadastro ainda não foi aprovado."
     do_login: "Faça login"
   logout:
     success: "Obrigado por participar. Até logo."
@@ -140,7 +141,7 @@ pt-BR:
 
     # Stuff from pages
     homepage:
-      intro: "Uma plataforma para unir ideias. Um Festival para torná-las reais."
+      intro: "Uma plataforma para unir ideias. Um Manguezal para torná-las reais."
       how_it_works: "Como funciona"
       about_themes: "Conheça os temas"
     popular:
