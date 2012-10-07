@@ -1,12 +1,12 @@
-Project Status
+<!-- Project Status
 ------
 [![Build Status](https://secure.travis-ci.org/softa/festivaldeideias.png?branch=master)](http://travis-ci.org/softa/festivaldeideias)
+ -->
 
-
-Site
+Baseado em:
 ----
 [http://festivaldeideias.org.br](http://festivaldeideias.org.br)
-
+<!-- 
 
 O que é o Festival de Ideias?
 -----------------------------
@@ -109,3 +109,4 @@ Wiki
 7. How to send pull requests to the original project?
 8. How to improve the community behind the Fdi?
 
+ -->
