@@ -187,6 +187,7 @@ GEM
     omniauth-oauth2 (1.0.2)
       oauth2 (~> 0.6.0)
       omniauth (~> 1.0)
+    opentok (0.0.7)
     orm_adapter (0.0.7)
     pg (0.13.2)
     pg_search (0.5)
@@ -337,6 +338,7 @@ DEPENDENCIES
   meta_search
   omniauth
   omniauth-facebook
+  opentok
   pg
   pg_search
   pusher
