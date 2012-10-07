@@ -17,8 +17,8 @@ class SessionsController < ApplicationController
     end
     self.current_user = @auth.user
     
-    flash[:notice] = t('login.success')
-    future_path = self.current_user ? redirect_url || root_path : new_session_path
+    flash[:notice] = self.current_user.approved ? t('login.success') : t('login.signup')
+    future_path = self.current_user.approved ? root_path : new_session_path
     redirect_to future_path
   end
 
