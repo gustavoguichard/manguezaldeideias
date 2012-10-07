@@ -180,7 +180,7 @@ ActiveRecord::Schema.define(:version => 20121007015451) do
     t.datetime "updated_at",                               :null => false
     t.datetime "notifications_read_at"
     t.boolean  "email_notifications",   :default => true
-    t.boolean  "approved",              :default => false, :null => false
+    t.boolean  "approved",              :default => false
   end
 
   add_foreign_key "ideas", "idea_categories", :name => "ideas_category_id_fk", :column => "category_id"
