@@ -8,6 +8,7 @@
       non_facebook_user:
         one: 'Não-usuário do Facebook'
         other: 'Não-usuários do Facebook'
+      user: 'Usuário'
 
     attributes:
       idea:
@@ -32,3 +33,9 @@
         email: 'Email'
         created_at: 'Criado em'
         updated_at: 'Atualizado'
+        approved: 'Aprovado'
+      user:
+        name: 'Nome'
+        created_at: 'Criado em'
+        updated_at: 'Atualizado'
+        approved: 'Aprovado'

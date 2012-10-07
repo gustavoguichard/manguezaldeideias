@@ -4,9 +4,9 @@ ActiveAdmin.register User do
   scope "Não aprovados", :not_approved
 
   index do
-    column "Nome", :name
+    column :name
     column :email
-    column "Aprovado", :approved, sortable: :approved do |user|
+    column :approved, sortable: :approved do |user|
       if user.approved then "Sim" else "Não" end
     end
     default_actions
@@ -23,4 +23,19 @@ ActiveAdmin.register User do
     f.buttons
   end
   
+  show title: :name do |user|
+    attributes_table do
+      row :name
+      row :email
+      row :email_notifications do |user|
+        if user.email_notifications then "Sim" else "Não" end
+      end
+      row :approved do |user|
+        if user.approved then "Sim" else "Não" end
+      end
+      row :created_at
+      row :updated_at
+    end
+  end
+
 end
