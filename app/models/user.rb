@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   include Rails.application.routes.url_helpers
 
   # User has many types of services (facebook, twitter and so on)
-  has_many :services
+  has_many :services, dependent: :destroy
   has_many :ideas
   has_many :collaborations, class_name: "Idea", conditions: "accepted AND parent_id IS NOT NULL"
   validates_presence_of :name, :email

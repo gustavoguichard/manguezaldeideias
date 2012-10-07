@@ -40,7 +40,7 @@ pt-BR:
     fb_description: 'Formulado para fomentar soluções criativas frente aos problemas atuais da sociedade e para promover a inovação e o empreendedorismo, o FdI é uma rede de colaboração e troca de informações entre empreendedores, investidores e o público em geral.'
     fb_image: "http://i.imgur.com/jrx4k.png"
   login:
-    success: "Bem vindo!"
+    success: "Bem vindo! Por favor, aguarde que seu cadastro seja aprovado para poder usar a plataforma."
     create_account: "Crie uma conta"
     do_login: "Faça login"
   logout:
