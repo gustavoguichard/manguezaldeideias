@@ -6,7 +6,7 @@ Feature: Colaborate with an idea
   @omniauth_test @javascript
   Scenario: I want to colaborate 
     Given there is an idea called "Carona me" that belongs to "TISA"
-    And I'm a logged user  
+    And I'm a logged user
     And I click "Carona me"
     And I click "Colabore na ideia"
     And I fill the form
