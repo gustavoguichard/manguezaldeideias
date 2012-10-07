@@ -15,6 +15,7 @@ User.blueprint do
   name { "name#{sn}" }
   email { "email#{sn}@email.com" }
   notifications_read_at { Time.now }
+  approved { true }
 end
 
 IdeaCategory.blueprint do

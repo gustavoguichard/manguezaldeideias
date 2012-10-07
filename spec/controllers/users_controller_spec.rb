@@ -9,7 +9,8 @@ describe UsersController do
         @user = Service.make!.user
         get :show, id: @user.id
       end
-      its(:status) { should == 200 }
+      its(:status) { should == 302 }
+      it { should redirect_to new_session_path }
     end
 
     context "with logged user" do

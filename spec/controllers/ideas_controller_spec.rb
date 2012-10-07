@@ -6,11 +6,33 @@ describe IdeasController do
     before do
       get :index
     end
+    its(:status) { should == 302 }
+    it { should redirect_to new_session_path}
+  end
+
+  describe "GET #index with logged user" do
+    before do
+      @user = Service.make!.user
+      controller.stub(:current_user).and_return(@user)
+      get :index
+    end
     its(:status) { should == 200 }
   end
 
   describe "GET #show" do
     before do
+      @idea = Idea.make!
+      get :show, :id => @idea.id
+
+    end
+    its(:status) { should == 302 }
+    it { should redirect_to new_session_path}
+  end
+
+  describe "GET #show with logged user" do
+    before do
+      @user = Service.make!.user
+      controller.stub(:current_user).and_return(@user)
       @idea = Idea.make!
       get :show, :id => @idea.id
 
