@@ -36,7 +36,7 @@ gem 'tinymce-rails'
 gem 'koala'
 
 # Cocreation Room
-gem 'opentok'
+# gem 'opentok'
 gem 'pusher'
 
 # Authentication + Authorization
