@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
 
   before_create :updates_notifications_read_at
 
+  scope :not_approved, where(approved: false)
+
   def collaborated_ideas
     self.collaborations.select("DISTINCT parent_id").map(&:parent)
   end

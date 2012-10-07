@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120621182355) do
+ActiveRecord::Schema.define(:version => 20121007015451) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -57,16 +57,32 @@ ActiveRecord::Schema.define(:version => 20120621182355) do
     t.string   "username"
     t.string   "action"
     t.text     "audited_changes"
-    t.integer  "version",         :default => 0
+    t.integer  "version",            :default => 0
     t.string   "comment"
     t.string   "remote_address"
     t.datetime "created_at"
+    t.string   "timeline_type"
+    t.integer  "actual_user_id"
+    t.integer  "parent_id"
+    t.text     "text"
+    t.text     "notification_texts"
   end
 
   add_index "audits", ["associated_id", "associated_type"], :name => "associated_index"
   add_index "audits", ["auditable_id", "auditable_type"], :name => "auditable_index"
   add_index "audits", ["created_at"], :name => "index_audits_on_created_at"
   add_index "audits", ["user_id", "user_type"], :name => "user_index"
+
+  create_table "banners", :force => true do |t|
+    t.string   "title",                          :null => false
+    t.text     "description",                    :null => false
+    t.string   "link_text",                      :null => false
+    t.string   "link_url",                       :null => false
+    t.string   "image_url",                      :null => false
+    t.boolean  "visible",     :default => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+  end
 
   create_table "idea_categories", :force => true do |t|
     t.text     "name",                          :null => false
@@ -78,28 +94,41 @@ ActiveRecord::Schema.define(:version => 20120621182355) do
   end
 
   create_table "ideas", :force => true do |t|
-    t.integer  "user_id",                                                              :null => false
+    t.integer  "user_id",                               :null => false
     t.integer  "parent_id"
-    t.text     "title",                                                                :null => false
+    t.text     "title",                                 :null => false
     t.text     "headline"
-    t.text     "description",                                                          :null => false
-    t.boolean  "featured",                                          :default => false, :null => false
-    t.boolean  "recommend",                                         :default => false, :null => false
-    t.integer  "likes",                                             :default => 0,     :null => false
-    t.integer  "position",                                          :default => 0,     :null => false
-    t.datetime "created_at",                                                           :null => false
-    t.datetime "updated_at",                                                           :null => false
-    t.integer  "category_id",                                                          :null => false
+    t.text     "description",                           :null => false
+    t.boolean  "featured",           :default => false, :null => false
+    t.boolean  "recommend",          :default => false, :null => false
+    t.integer  "likes",              :default => 0,     :null => false
+    t.integer  "position",           :default => 0,     :null => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
+    t.integer  "category_id",                           :null => false
     t.boolean  "accepted"
-    t.decimal  "minimum_investment", :precision => 10, :scale => 2, :default => 0.0,   :null => false
     t.string   "facebook_url"
     t.string   "tokbox_session"
+    t.integer  "original_parent_id"
+    t.integer  "comment_count"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.text     "city"
+    t.text     "state"
+    t.text     "country"
   end
 
   add_index "ideas", ["category_id"], :name => "category_id_idx"
   add_index "ideas", ["parent_id"], :name => "parent_id_idx"
   add_index "ideas", ["title"], :name => "title_idx"
   add_index "ideas", ["user_id"], :name => "user_id_idx"
+
+  create_table "institutional_videos", :force => true do |t|
+    t.string   "video_url"
+    t.boolean  "visible",    :default => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
 
   create_table "messages", :force => true do |t|
     t.integer  "idea_id"
@@ -110,9 +139,10 @@ ActiveRecord::Schema.define(:version => 20120621182355) do
   end
 
   create_table "non_facebook_users", :force => true do |t|
-    t.string   "email",      :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "email",                         :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.boolean  "approved",   :default => false, :null => false
   end
 
   create_table "notifications", :force => true do |t|
@@ -144,11 +174,13 @@ ActiveRecord::Schema.define(:version => 20120621182355) do
   end
 
   create_table "users", :force => true do |t|
-    t.text     "name",                  :null => false
-    t.text     "email",                 :null => false
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
+    t.text     "name",                                     :null => false
+    t.text     "email",                                    :null => false
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
     t.datetime "notifications_read_at"
+    t.boolean  "email_notifications",   :default => true
+    t.boolean  "approved",              :default => false, :null => false
   end
 
   add_foreign_key "ideas", "idea_categories", :name => "ideas_category_id_fk", :column => "category_id"
