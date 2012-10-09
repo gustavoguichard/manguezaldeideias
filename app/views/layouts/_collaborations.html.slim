@@ -6,8 +6,6 @@
     h3#ideas-to-accept
       = t "idea.colaboration.accept.some_colaborations", number: @idea.colaborations.not_accepted.count
 
-    // Listing all colaborations that aren't accepted
-    / - collab = @idea.colaborations.not_accepted.first
     ul
       - @idea.colaborations.not_accepted.each do |collab|
         li class="#{cycle('odd', 'even')}"

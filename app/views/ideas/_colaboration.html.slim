@@ -23,10 +23,6 @@
           = f.label :description, t('idea.colaboration.new.give_a_description')
           = f.text_area :description, :class => 'required', :value => idea.description
 
-        / p
-        /   = f.label :minimum_investment, t('idea.new.minimum_investment')
-        /   em = t('idea.new.minimum_investment_collab_desc')
-        /   = f.text_field :minimum_investment, :class => 'currency', :value => idea.formatted_minimum_investment, :maxlength => 16
 
       #refine
         .categories.required
