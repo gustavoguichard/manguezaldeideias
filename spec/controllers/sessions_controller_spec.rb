@@ -12,14 +12,14 @@ describe SessionsController do
         Service.stub(:find_from_hash).and_return(false)
         @hash = Service.stub(:create_from_hash).and_return("current_user")
       end
-      it { should redirect_to root_path }
+      it { should redirect_to new_session_path }
     end
-    context "When the user is in the service list" do
+    context "When the user is in the service list but not approved" do
       before do
-        @auth = Service.make!(:uid => FACEBOOK_HASH_DATA["uid"])
+        @auth = Service.make!(:uid => FACEBOOK_HASH_DATA["uid"], :user => User.make!)
         Service.stub(:find_from_hash).and_return(true)
       end
-      it { should redirect_to root_path }
+      it { should redirect_to new_session_path }
     end
   end
 end

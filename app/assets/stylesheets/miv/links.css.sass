@@ -22,19 +22,24 @@
 
 // * buttons
 .button
-  &.cocreation
-    +cocreation
-    &:hover
-      background:
-        color: $orange
-      border:
-        color: darken($orange, 10%)
+  +btn($acquagreen, none, 1.2em)
+  +box-shadow(none)
+  border: 1px solid darken($acquagreen, 10%)
+
+  &:hover
+    +box-shadow(0 2px 3px rgba(black, .2))
+    background-color: $acquagreen
+    +background-image(linear-gradient($acquagreen, darken($acquagreen, 3%)))
+  
+  &:active
+    +box-shadow(0 0 3px 2px rgba(black, .1) inset)
+    background: $acquagreen
+
   &.contribute
     +btn($darkorange, right, 1.2em)
     margin: 10px 0
     padding: 12px 22px
   &.start
-    +btn($purple, none, 1.2em)
     margin-top: 10px
     display: block
     padding: 12px

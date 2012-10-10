@@ -7,6 +7,7 @@ Feature: Colaborate with an idea
   Scenario: I want to colaborate 
     Given there is an idea called "Carona me" that belongs to "TISA"
     And I'm a logged user
+    And I was previously approved
     And I click "Carona me"
     And I click "Colabore na ideia"
     And I fill the form
@@ -16,7 +17,8 @@ Feature: Colaborate with an idea
   @omniauth_test @javascript 
   Scenario: My colaboration was accepted
     Given there is an idea called "Carona me" by "Hitchhiker"
-    And I'm a logged user  
+    And I'm a logged user
+    And I was previously approved
     And I made a colaboration called "Carona.me updated title" in the idea "Carona me" and it was accepted
     And I am in "the homepage"
     When I click in the notifications bar
@@ -25,7 +27,8 @@ Feature: Colaborate with an idea
   @omniauth_test @javascript 
   Scenario: My colaboration was rejected :(
     Given there is an idea called "Carona me" by "Hitchhiker"
-    And I'm a logged user  
+    And I'm a logged user
+    And I was previously approved
     And I made a colaboration called "Carona.me updated title" in the idea "Carona me" and it was rejected
     And I am in "the homepage"
     And I click in the notifications bar

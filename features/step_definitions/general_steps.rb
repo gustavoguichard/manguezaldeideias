@@ -3,6 +3,10 @@ Given /^I'm a logged user$/ do
   visit "/auth/facebook"
 end
 
+Given /^I was previously approved$/ do
+  User.first.approved = true
+end
+
 Given /^there is an idea called "([^"]*)" that belongs to "([^"]*)"$/ do |arg1, arg2|
   Idea.make!(title: arg1, category: IdeaCategory.find_by_name(arg2), user: Service.make!.user)
 end

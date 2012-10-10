@@ -5,7 +5,7 @@ nav
       = link_to timeline_index_path do
         | Atividade recente
     li class=(path =~ /^\/(o-que-e-o-manguezal-de-ideias)/ ? 'selected' : '')
-      = link_to "O que é o Manguezal de Ideias", "/o-que-e-o-manguezal-de-ideias"
+      = link_to "O que é o Manguezal", "/o-que-e-o-manguezal-de-ideias"
     li class=(path =~ /^\/(tema)/ ? 'selected' : '')
       = link_to "Tema", "/tema"
     li#more_info_links class=(if path =~ /^\/(objetivo-e-resultado)/ or path=~ /^\/(regulamento)/ then 'selected' else '' end)

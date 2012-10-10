@@ -39,8 +39,6 @@ html
         - if current_page?(root_url)
           = render partial: "layouts/header"
 
-      .clear
-
     .wrapper
       #main
         aside
@@ -50,7 +48,6 @@ html
             = render partial: "layouts/news_board"
 
           = yield
-        .clear
 
       - if current_page?(root_url) or request.url.match(/navegue-nas-ideias/)
         = render partial: "layouts/statistics"

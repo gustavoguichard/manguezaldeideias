@@ -9,19 +9,18 @@
   li
     float: none
   .submenu
-    Z-index: 999
-    @include border-radius(3px)
+    z-index: 999
+    @include border-radius(0 0 3px 3px)
     @include box-shadow(0 4px 5px rgba(0, 0, 0, 0.5))
     display: none
-    background: #000
+    background: $darkorange
     position: absolute
     top: 20px
     right: 0
-    padding: 5px 0
     .submenu-item
       text-align: left
       a
-        padding: 10px
+        padding: 5px 10px
         display: block
         white-space: nowrap
         font-size: 14px
@@ -32,16 +31,12 @@
         @include box-shadow(none)
         &:hover
           color: #FFF
-          @include border-radius(0)
-          background: #444
   &:hover
     .submenu
       display: block
     a
-      background: #000
+      background: $darkorange
       color: #FFF
-      @include box-shadow(0 4px 5px rgba(0, 0, 0, 0.5))
-
 
 body
   background:
@@ -124,10 +119,8 @@ article, .page_body
   margin: 0
   +box-shadow(0 1px 2px rgba(0, 0, 0, 0.07))
   padding: 0
-  background:
-    color: #EAEAEA
-    image: url(asset_path("main_bg.png", "image"))
-    repeat: y-repeat
+  background-color: rgba(white, .7)
+  +clearfix
 
 aside
   +grid(3)
@@ -151,6 +144,7 @@ aside
   float: none
   display: block
   clear: both
+  +legacy-pie-clearfix
   margin: 0 auto
 
 .right
@@ -222,18 +216,17 @@ h2.info
 // HEADER
 header.main
   margin-bottom: 20px
-  border-bottom: 5px solid #FFF
-  height: 103px
-  background:
-    color: rgba(255, 255, 255, 0.6)
-  //+background-image(linear-gradient(bottom, $lightgreen, #BED487))
-  +box-shadow(0 0 1px #BBB)
+  border-bottom: 2px solid white
+  height: 96px
+  background-color: rgba(0, 0, 0, .05)
 
   ul.user_actions
     margin: 0 0 0 10px
     float: right
     +border-bottom-radius(3px)
-    background: #000
+    background: #3A599A
+    border: 1px solid #1F4189
+    border-top-width: 0
     a
       font-weight: 400
       +text-shadow(none)
@@ -257,16 +250,11 @@ header.main
         margin: 5px 0
         float: left
 
-    li.notifications, li.logged_in
-      &:hover
-        background-color: $darkorange
-
-    
     li.notifications
+      border-right: 1px solid rgba(255, 255, 255, .4)
       position: relative
       padding: 10px 10px 9px 10px
       margin-right: -1px
-      background: #333
       +border-bottom-left-radius(3px)
       &.active
         background: $darkorange
@@ -303,7 +291,8 @@ header.main
         z-index: 10
         right: 0
         top: -2px
-        background-color: $darkorange
+        background-color: white
+        border: 2px solid #aaa
         margin-right: 0
         padding-bottom: 0
         .content
@@ -338,11 +327,9 @@ header.main
             &:hover
               background:
                 color: #EEE
-              color: $darkorange
 
 
     li.logged_in
-      background-color: #000
       +border-bottom-right-radius(3px)
       .name
         color: #FFF
@@ -355,7 +342,6 @@ header.main
         &:after
           content: ""
       &:hover
-        border-bottom: 1px solid #FEFFFF
         a
         .user_menu
           display: block
@@ -367,8 +353,8 @@ header.main
       margin-top: 35px
       z-index: 10
       right: -11px
-      top: -2px
-      background-color: $darkorange
+      top: 1px
+      background-color: white
       img
         +grid(1)
         margin: 0
@@ -422,30 +408,36 @@ header.main
 
   nav
     min-width: 440px
-    max-width: 650px
+    max-width: 700px
     float: right
-    margin: 42px 0 0 0
+    margin: 40px 0 6px 0
     clear: right
-    .actions
-      li
-        float: left
-        a, a:link, a:visited, a:active
-          font-weight: lighter
-          font-size: 1.3em
-          color: #000
-          padding: 5px
-          margin-left: 20px
-          +border-radius(3px)
-        a:hover
-          background: #000
-          color: #FFF
-      .selected
-        a, a:link, a:visited
-          background: #DDD
-          color: #999
-          +box-shadow(-1px -1px 0 #BBB)
-          &:hover
-            cursor: default
+
+  .actions
+    +pie-clearfix
+    li
+      float: left
+      a, a:link, a:visited, a:active
+        font:
+          size: 1.1em
+          weight: normal
+        background: rgba(white, .7)
+        color: #666
+        padding: 5px
+        margin-left: 5px
+        +border-radius(3px 3px 0 0)
+        border: 1px solid rgba(black, .1)
+        border-bottom-width: 0
+      a:hover
+        background: $darkorange
+        color: #FFF
+    .selected
+      a, a:link, a:visited
+        background: #DDD
+        color: #999
+        +box-shadow(-1px -1px 0 #BBB)
+        &:hover
+          cursor: default
 
 
 // IDEA BUCKETS
@@ -549,14 +541,11 @@ ol.ideas_buckets
 
 // STATISTICS
 section#statistics
-  clear: both
-  overflow: hidden
-  overflow: hidden
+  +clearfix
   padding: 20px 0
   margin: 40px 0 0 0
-  background: #000
-  color: $lightyellow
-  +border-radius(5px)
+  border-top: 1px dashed #ccc
+  color: #666
 
   ul
     +grid(4)
@@ -564,9 +553,7 @@ section#statistics
       line-height: 24px
       padding: 5px 0
       margin: 0 10px
-      &:first-child, &:last-child
-        border: 0
-        +box-shadow(none)
+
     h3
       background:
         image: url(asset_path("icons.png", "image"))
@@ -576,7 +563,7 @@ section#statistics
       padding-bottom: 5px
       font-weight: lighter
       font-size: 1.8em
-      color: $yellow
+
     &.more_info
       h3
         background:
@@ -593,7 +580,7 @@ section#statistics
           font-size: 2.2em
 
   a, a:link, a:hover, a:visited
-    color: $lightyellow
+    color: $purple
     font-weight: lighter
     font-size: 1.1em
     +text-shadow(none)
@@ -623,8 +610,8 @@ footer
     clear: both
     overflow: hidden
     background: #FFF
-    border-top: 1px solid #CCC
-    border-bottom: 1px solid #CCC
+    border-top: 1px dashed #CCC
+    border-bottom: 1px dashed #CCC
     padding: 20px 0
     ul
       float: left
