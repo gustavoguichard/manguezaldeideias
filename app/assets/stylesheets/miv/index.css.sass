@@ -401,6 +401,7 @@ header.main
   .logo
     position: absolute
     top: -30px
+    left: 10px
     img
       float: left
 
@@ -430,13 +431,14 @@ header.main
         border-bottom-width: 0
       a:hover
         background: $darkorange
+        border-color: darken($darkorange, 10%)
         color: #FFF
     .selected
       a, a:link, a:visited
-        background: #DDD
-        color: #999
-        +box-shadow(-1px -1px 0 #BBB)
+        color: #333
+        border-color: rgba(black, .3)
         &:hover
+          color: white
           cursor: default
 
 

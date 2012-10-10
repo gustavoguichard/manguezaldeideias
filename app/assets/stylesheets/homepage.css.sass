@@ -51,12 +51,13 @@ body[data-action="Index"][data-controller-name="Ideas"]
         +box-shadow(0 1px 2px #aaa)
 
   .newsboard
-    background: $darkorange
+    background: #eee
+    border: 2px solid #999
     padding: 10px 10px 20px 10px
     margin: 10px 10px 20px 10px
     +border-radius(3px)
-    color: white
-    text-shadow: 1px 1px 0 rgba(black, .4)
+    color: #333
+    text-shadow: 1px 1px 0 white
     img
       float: left
       margin: 35px 10px 0 0
@@ -69,3 +70,10 @@ body[data-action="Index"][data-controller-name="Ideas"]
         repeat: no-repeat
         position: 0 -262px
       padding-left: 18px
+    a.click_here
+      background: #999
+      color: white !important
+      text-shadow: none
+
+      &:hover
+        background: #777
