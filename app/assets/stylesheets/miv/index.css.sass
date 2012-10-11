@@ -612,44 +612,34 @@ footer
         margin: 0
 
   section.credits
-    clear: both
-    overflow: hidden
+    +clearfix
     background: #FFF
     border-top: 1px dashed #CCC
     border-bottom: 1px dashed #CCC
     padding: 20px 0
-    ul
-      float: left
-      margin-bottom: 60px
-      &:last-child
-        margin-bottom: 0
-      li
-        text-transform: uppercase
-        color: #666
-        margin-right: 43px
-        &:first-child
-          float: none
-  .brought_by
-    +grid(3)
-  .partners
-    +grid(9)
-  .sponsors
-    +grid(12)
-  .supporters
-    +grid(12)
-  ul
-    li
-      float: left
+    text-transform: uppercase
 
-  section.links
-    +grid(10)
-    a
-      font-size: 10px
-      color: #333
-      font-weight: 400
-      +text-shadow(none)
-      &:hover
-        color: #666
+    h5
+      clear: both
+    
+    ul
+      +horizontal-list
+
+      li
+        margin: 0 20px 20px 0
+
+  .partners
+    +grid(12)
+  
+  // section.links
+  //   +grid(10)
+  //   a
+  //     font-size: 10px
+  //     color: #333
+  //     font-weight: 400
+  //     +text-shadow(none)
+  //     &:hover
+  //       color: #666
 
   .engage
     float: right
