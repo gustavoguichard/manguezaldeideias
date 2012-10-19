@@ -7,7 +7,6 @@
 - if path == root_path
   = render "layouts/filters"
   = render "layouts/community"
-  = render "layouts/events"
   
 - elsif path =~ /^\/(navegue-nas-ideias)/
   = render "layouts/filters"
@@ -21,14 +20,11 @@
   
 - elsif path =~ /^\/(ideias)/
   = render "layouts/collaborators"
-  = render "layouts/events"
 
 - elsif path =~ /(collaboration)/
   = render "layouts/collaborators"
-  = render "layouts/events"
 
 - else
   = render "layouts/internal_menu"
-  = render "layouts/events"
   = render "layouts/community"
 

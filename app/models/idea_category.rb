@@ -12,13 +12,12 @@ class IdeaCategory < ActiveRecord::Base
 
   def badge
     result = case self.id
-             when 1 then "/assets/badges/tisa.png"
              when 2 then "/assets/badges/agv.png"
              when 3 then "/assets/badges/cremer.png"
              when 4 then "/assets/badges/morenarosa.png"
              when 5 then "/assets/badges/omega.png"
              when 6 then "/assets/badges/manguetarpon.png"
-             else "/assets/badges/tisa.png"
+             else "/assets/badges/manguetarpon.png"
              end
   end
 

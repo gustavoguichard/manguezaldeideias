@@ -3,7 +3,7 @@
   img src=(Banner.latest ? Banner.latest.image_url : "assets/pensar-junto.png")
   h2= (Banner.latest ? Banner.latest.title : "Vamos cocriar?")
   p= (Banner.latest ? Banner.latest.description : "Cocriação é uma forma presencial de criar ideias colaborativamente, todos sabem que duas cabeças pensam melhor do que uma, e é por isso que queremos muitas cabeças pensando nas ideias mais legais que estão por aqui!")
-  span.right
-    = (Banner.latest ? Banner.latest.link_text : "Para saber mais e ver as datas das cocriações em SP")
-    a.click_here href=(Banner.latest ? Banner.latest.link_url : "/co-criacao") clica aqui
-  .clear
+  - if Banner.latest
+    span.right
+      = Banner.latest.link_text
+      a.click_here href=(Banner.latest.link_url) clica aqui

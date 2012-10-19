@@ -8,11 +8,7 @@ nav
       = link_to "O que é o Manguezal", "/o-que-e-o-manguezal-de-ideias"
     li class=(path =~ /^\/(tema)/ ? 'selected' : '')
       = link_to "Tema", "/tema"
-    li#more_info_links class=(if path =~ /^\/(objetivo-e-resultado)/ or path=~ /^\/(regulamento)/ then 'selected' else '' end)
-      = link_to "Objetivo e Resultado", "/objetivo-e-resultado", id: "more_info"
-      ul.submenu
-        li.submenu-item
-          = link_to "Regulamento", "/regulamento"
-
+    li class=(path =~ /^\/(regulamento)/ ? 'selected' : '')
+      = link_to "Regulamento", "/regulamento"
     li class=(path =~ /^\/(contato)/ ? 'selected' : '')
       = link_to "Contato", "/contato"

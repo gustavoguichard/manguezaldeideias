@@ -163,7 +163,7 @@ Then /^I should see the latest video$/ do
 end
 
 Then /^I should see the default video$/ do
-  page.find("iframe")[:src].should == "http://www.youtube.com/embed/NugRZGDbPFU"
+  page.find("iframe")[:src].should == "http://www.youtube.com/embed/g6tgH2dWx5c"
 end
 
 ############## Banners steps

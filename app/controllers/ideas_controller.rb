@@ -21,7 +21,7 @@ class IdeasController < ApplicationController
   before_filter :load_resources
 
   before_filter only: [:create] do
-    unless params[:terms_acceptance] && params[:cc_license] && params[:share_license] && params[:change_license]
+    unless params[:terms_acceptance] && params[:share_license] && params[:change_license]
       render new_idea_path and return
     end
   end

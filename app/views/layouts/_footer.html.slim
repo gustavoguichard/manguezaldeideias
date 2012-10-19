@@ -1,14 +1,14 @@
 footer
-  section.credits
-    .wrapper
-      h5 Parceiros
-      ul.partners
-        li = image_tag "partners/agv.png"
-        li = image_tag "partners/cremer.png"
-        li = image_tag "partners/morenarosa.png"
-        li = image_tag "partners/omega.png"
-        li = image_tag "partners/tarpon.png"
-        li = image_tag "partners/tisa.png"
+  - if !current_page?(new_session_url)
+    section.credits
+      .wrapper
+        h5 Parceiros
+        ul.partners
+          li = image_tag "partners/agv.png"
+          li = image_tag "partners/cremer.png"
+          li = image_tag "partners/morenarosa.png"
+          li = image_tag "partners/omega.png"
+          li = image_tag "partners/tarpon.png"
 
   .wrapper
     section.links
