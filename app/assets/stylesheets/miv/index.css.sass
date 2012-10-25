@@ -189,6 +189,7 @@ aside
   +border-radius(8px)
   +box-shadow(1px 1px 5px lighten(#3C9, 40%))
   +clearfix
+  background: #4CB053
   +background-image(linear-gradient(bottom, color-stops(#4CB053 47%, #7FC796 98%)))
 
 .hightlight
@@ -220,7 +221,6 @@ h2.info
 header.main
   margin-bottom: 20px
   border-bottom: 2px solid white
-  height: 96px
   background-color: rgba(0, 0, 0, .05)
 
   ul.user_actions
@@ -404,7 +404,7 @@ header.main
 
   .logo
     position: absolute
-    top: -30px
+    top: -42px
     left: 10px
     img
       float: left
@@ -415,7 +415,7 @@ header.main
     min-width: 440px
     max-width: 700px
     float: right
-    margin: 40px 0 6px 0
+    margin: 50px 0 30px
     clear: right
 
   .actions
@@ -428,11 +428,10 @@ header.main
           weight: normal
         background: rgba(white, .7)
         color: #666
-        padding: 5px
-        margin-left: 5px
-        +border-radius(3px 3px 0 0)
-        border: 1px solid rgba(black, .1)
-        border-bottom-width: 0
+        padding: 8px 12px
+        margin-left: 8px
+        +border-radius(3px)
+        border: 2px solid #c8c8c8
       a:hover
         background: $darkorange
         border-color: darken($darkorange, 10%)
