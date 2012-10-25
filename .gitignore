@@ -32,3 +32,4 @@ public/uploads
 logfile
 config/initializers/02-tokbox.rb
 latest.dump
+zeus.json
