@@ -4,6 +4,7 @@ html
     - @title = yield(:title)
     title == "#{(@title.empty? ? 'Uma plataforma para unir ideias' : @title)} · Manguezal de Ideias"
     = render partial: "layouts/meta_tags_defaults"
+    = favicon_link_tag "favicon.ico", type: "image/ico"
     = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Droid+Serif|Gloria+Hallelujah", :application
     = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
     = csrf_meta_tags
