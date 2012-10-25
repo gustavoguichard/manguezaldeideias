@@ -4,7 +4,7 @@ div.page_body
   = raw @page.body
   = new_idea_button('button')
 
-section#comments
-  a name="comment"
-  h3 Comentários
-  = render partial: 'shared/comments', locals: { url: url_for(@page) }
+/ section#comments
+/   a name="comment"
+/   h3 Comentários
+/   = render partial: 'shared/comments', locals: { url: url_for(@page) }
