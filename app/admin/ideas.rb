@@ -11,7 +11,7 @@ ActiveAdmin.register Idea do
 
     column("Moderador")               { |idea| idea.user.name }
     column("Título")                  { |idea| idea.title }
-    column("Valor do investimento")   { |idea| idea.minimum_investment }
+    # column("Valor do investimento")   { |idea| idea.minimum_investment }
     column("URL")                     { |idea| category_idea_url(idea.category, idea) }
     column("Causa")                   { |idea| idea.category.name }
     column("Número de colaboradores") { |idea| idea.colaborations.size }

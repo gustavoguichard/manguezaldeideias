@@ -10,7 +10,7 @@
     p
       = f.label :title, t('idea.new.give_a_name')
       = f.text_field :title, :maxlength => 70, :class => 'required'
-    p
+    /p
       = f.label :minimum_investment, t("idea.value.title")
       = f.text_field :minimum_investment, :maxlength => 16, class: 'currency'
       em = t('idea.new.minimum_investment_desc')

@@ -18,8 +18,7 @@ module ApplicationHelper
       :title => 'título',
       :headline => 'resumo',
       :description => 'descrição',
-      :category_id => 'categoria',
-      :minimum_investment => 'custo de realização'
+      :category_id => 'categoria'
     }
     fields = []
     attributes.each_pair { |attr, text|
