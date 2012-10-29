@@ -99,7 +99,7 @@ pt-BR:
         give_a_description: "Algo a adicionar? Aqui é o corpo da ideia, colabore alterando e/ou adicionando seus pontos:"
         give_a_name: "Sabe de um título melhor? Colabore aqui:"
         give_a_headline: "Se quiser, colabore no resumo da ideia:"
-        choose_a_category: "Em que tema esta ideia se encaixa?"
+        choose_a_category: "Em que coletivo esta ideia se encaixa?"
       accept:
         no_colaborations: "Não há colaborações para moderar no momento."
         some_colaborations: "Você possui %{number} colaborações para aceite!"
@@ -144,7 +144,7 @@ pt-BR:
     homepage:
       intro: "Uma plataforma para unir ideias. Um Manguezal para torná-las reais."
       how_it_works: "Como funciona"
-      about_themes: "Conheça os temas"
+      about_themes: "Conheça os coletivos"
     popular:
       header: "Ideias Populares"
       about: "Uma ideia popular é aquela que tem bastante interação por contribuição e comentários de usuários."
@@ -153,7 +153,7 @@ pt-BR:
     filters:
       title: "Navegue nas ideias"
       by_stats: "Por estatísticas"
-      by_cat: "Por tema"
+      by_cat: "Por coletivo"
       by_keyword: "Por palavra-chave"
 
       popular:

@@ -1,5 +1,11 @@
 @import compass/css3
 
+= legacy-background-image($options, $color1, $color2: false)
+  @if $color2
+    background-color: mix($color1, $color2)
+  @else
+    background-color: $color1
+  +background-image($options)
 
 // Natália: Este é o submenu do "Saiba Mais"
 #more_info_links
@@ -189,8 +195,7 @@ aside
   +border-radius(8px)
   +box-shadow(1px 1px 5px lighten(#3C9, 40%))
   +clearfix
-  background: #4CB053
-  +background-image(linear-gradient(bottom, color-stops(#4CB053 47%, #7FC796 98%)))
+  +legacy-background-image(linear-gradient(bottom, color-stops(#4CB053 47%, #7FC796 98%)), #4CB053, #7FC796)
 
 .hightlight
   padding: 10px
@@ -231,7 +236,7 @@ header.main
     border: 1px solid #1F4189
     border-top-width: 0
     a
-      color: white
+      color: black
       font-weight: 400
       +text-shadow(none)
     a.name
@@ -626,7 +631,7 @@ footer
       +horizontal-list
 
       li
-        margin: 0 20px 20px 0
+        margin-bottom: 20px
 
   .partners
     +grid(12)
