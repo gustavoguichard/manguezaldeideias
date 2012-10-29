@@ -33,7 +33,7 @@ var App = window.App = {
             App.Common.startFacebox();
             // Sempre executar
             App.Ideas.newIdea = new App.Ideas.NewIdea();
-            App.fbEvents = new App.FbEvents();
+            // App.fbEvents = new App.FbEvents();
             // Carrega os eventos do facebook e apende na barra lateral
             App.Common.startPjaxLinks();
 
