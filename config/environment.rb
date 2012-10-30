@@ -2,7 +2,7 @@
 require File.expand_path('../application', __FILE__)
 
 # Initialize the rails application
-FestivalDeIdeias::Application.initialize!
+ManguezalDeIdeias::Application.initialize!
 
 unless Rails.env.test?
   ActionMailer::Base.delivery_method = :smtp

@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-FestivalDeIdeias::Application.load_tasks
+ManguezalDeIdeias::Application.load_tasks

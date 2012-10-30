@@ -9,7 +9,7 @@ require 'rails/all'
   Bundler.require(:default, :assets, Rails.env)
 
 
-module FestivalDeIdeias
+module ManguezalDeIdeias
   class Application < Rails::Application
 
     config.middleware.use Rack::Pjax

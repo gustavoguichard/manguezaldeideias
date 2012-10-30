@@ -1,4 +1,4 @@
-FestivalDeIdeias::Application.routes.draw do
+ManguezalDeIdeias::Application.routes.draw do
 
   # First role routes
   ActiveAdmin.routes(self)
