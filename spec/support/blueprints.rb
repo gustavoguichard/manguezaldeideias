@@ -54,7 +54,7 @@ Banner.blueprint do
   description { "Description" }
   link_text { "Link text" }
   link_url { "http://manguezaldeideias.herokuapp.com/" }
-  image_url { "http://festivaldeideias.org.br/assets/pensar-junto.png" }
+  image_url { "http://manguezaldeideias.com.br/assets/pensar-junto.png" }
   visible { true }
 end
 

@@ -4,8 +4,8 @@ rvm:
 
 before_script:
   - "cp config/database.sample.yml config/database.yml"
-  - "psql -c 'create role festival SUPERUSER LOGIN;' postgres"
-  - "psql -c 'create database festival_ideias_test;' -U festival postgres"
+  - "psql -c 'create role manguezal SUPERUSER LOGIN;' postgres"
+  - "psql -c 'create database manguezal_ideias_test;' -U manguezal postgres"
   - "sh -e /etc/init.d/xvfb start"
 
 env:

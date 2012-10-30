@@ -5,8 +5,8 @@ require 'json'
 
 =begin
   Meu id: 100002129060701
-  Id do Festival de ideias: 211024602327337
-  Id do Festival teste: 191020401004722
+  Id do Manguezal de ideias: 211024602327337
+  Id do Manguezal teste: 191020401004722
 =end
 
 class FacebookEvents

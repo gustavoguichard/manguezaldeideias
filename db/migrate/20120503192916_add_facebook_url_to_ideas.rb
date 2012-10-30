@@ -4,7 +4,7 @@ class AddFacebookUrlToIdeas < ActiveRecord::Migration
 
     Idea.reset_column_information
     route_helper = Rails.application.routes.url_helpers.method(:category_idea_path)
-    url = "http://festivaldeideias.org.br"
+    url = "http://manguezaldeideias.com.br"
 
     Idea.all.each do |idea|
       idea_path = url + route_helper.call(idea.category, idea)
