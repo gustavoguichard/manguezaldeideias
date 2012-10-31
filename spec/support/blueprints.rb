@@ -53,7 +53,7 @@ Banner.blueprint do
   title { "Title" }
   description { "Description" }
   link_text { "Link text" }
-  link_url { "http://manguezaldeideias.herokuapp.com/" }
+  link_url { "http://manguezaldeideias.com.br/" }
   image_url { "http://manguezaldeideias.com.br/assets/pensar-junto.png" }
   visible { true }
 end

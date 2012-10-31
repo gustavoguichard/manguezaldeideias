@@ -133,7 +133,7 @@ describe Idea do
   describe "#set_facebook_url" do
     it "Should generate a correct url for facebook comments and likes" do
       @idea = Idea.make! title: "My Title"
-      @idea.facebook_url.should == category_idea_url(@idea.category, @idea, host: "manguezaldeideias.herokuapp.com")
+      @idea.facebook_url.should == category_idea_url(@idea.category, @idea, host: "manguezaldeideias.com.br")
     end
   end
 

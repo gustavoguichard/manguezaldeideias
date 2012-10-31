@@ -153,7 +153,7 @@ class Idea < ActiveRecord::Base
   # You change an url, your comments are gone.
 
   def set_facebook_url
-    url = category_idea_url(self.category, self, host: "manguezaldeideias.herokuapp.com")
+    url = category_idea_url(self.category, self, host: "manguezaldeideias.com.br")
     self.update_attribute(:facebook_url, url)
   end
 
