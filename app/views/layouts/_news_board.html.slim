@@ -2,7 +2,7 @@
 - @banner = Banner.latest
 .newsboard
   - if @banner && @banner.image_url != ""
-    img src=(@banner.image_url)
+    img src=(@banner ? @banner.image_url : "assets/pensar-junto.png")
   h2= (@banner ? @banner.title : "Vamos cocriar?")
   p= (@banner ? @banner.description : "Qualquer pessoa das empresas do ecossistema Tarpon pode propor uma ideia clicando no botão \"Inicie uma Ideia\". Outras pessoas podem colaborar com essa ideia propondo modificações. O objetivo do nosso Manguezal é que se formem comunidades de cocriadores em torno das ideias apresentadas. Uma ideia é sempre mais criativa quando compartilhada e desenvolvida em rede. O que vale aqui é a cocriação e o trabalho em rede.")
   - if @banner && @banner.link_text != ""
